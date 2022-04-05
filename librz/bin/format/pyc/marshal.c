@@ -934,6 +934,8 @@ static pyc_object *get_code_object(RzBuffer *buffer) {
 	// to help disassemble the code
 	cobj->start_offset = rz_buf_tell(buffer) + 5; // 1 from get_object() and 4 from get_string_object()
 	if (!refs) {
+		free(ret);
+		free(cobj);
 		return ret; // return for entried part to get the root object of this file
 	}
 	cobj->code = get_object(buffer);
