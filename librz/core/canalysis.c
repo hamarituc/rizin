@@ -6483,7 +6483,7 @@ RZ_IPI void rz_core_analysis_value_pointers(RzCore *core, RzOutputMode mode) {
 			from = rz_itv_begin(map2->itv);
 			to = rz_itv_end(map2->itv);
 			if ((to - from) > MAX_SCAN_SIZE) {
-				rz_core_notify_done("Skipping large region (from 0x%08" PFMT64x " to 0x%08" PFMT64x ")", from, to);
+				rz_core_notify_done(core, "Skipping large region (from 0x%08" PFMT64x " to 0x%08" PFMT64x ")", from, to);
 				continue;
 			}
 			rz_core_notify_done(core, "Value from 0x%08" PFMT64x " to 0x%08" PFMT64x " (aav)", from, to);
